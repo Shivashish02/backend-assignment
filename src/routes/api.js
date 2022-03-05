@@ -23,7 +23,7 @@ route.post('/authenticate', async (req, res) => {                               
     const uuid = user.uuid
     const id = user.id
     const token = await jwt.sign({ uuid, id }, "thisismysecretkey")
-    res.send(token)
+    res.send({"token" : token})
 })
 
 route.post('/follow/:id', async (req, res) => {                                         //ok
