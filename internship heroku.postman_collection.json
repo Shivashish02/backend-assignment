@@ -51,24 +51,6 @@
 			"response": []
 		},
 		{
-			"name": "get all users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{base_url}}/{{prefix}}/all",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"{{prefix}}",
-						"all"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "get all posts",
 			"request": {
 				"method": "GET",

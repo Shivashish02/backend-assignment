@@ -13,11 +13,6 @@ const {
 
 const route = Router()
 
-route.get('/all', async (req, res) => {
-    const users = await getallusers()
-    res.send(users)
-})
-
 route.post('/authenticate', async (req, res) => {                                       //ok
     const user = await createUser(req.body.email, req.body.password)
     const uuid = user.uuid
