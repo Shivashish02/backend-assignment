@@ -35,8 +35,8 @@ const Users = db.define('user', {
         type: Sequelize.DataTypes.UUID,
         defaultValue: Sequelize.DataTypes.UUIDV4
     },
-    email: COL_STRING_DEF,
-    password: COL_STRING_DEF,
+    email: COL_TITLE_DEF,
+    password: COL_TITLE_DEF,
     followers: {
         type: Sequelize.ARRAY(Sequelize.INTEGER),
         allowNull: false,
