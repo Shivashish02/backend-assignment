@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "2ecd7372-6a6f-48e5-a960-646660af4af3",
+		"name": "internship heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authenticate the user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseData = pm.response.json();\r",
+							"pm.collectionVariables.set(\"token\", responseData.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "a",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "a",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/{{prefix}}/authenticate",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{prefix}}",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{prefix}}/all",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{prefix}}",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{prefix}}/all_posts",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{prefix}}",
+						"all_posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a post with a postid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{prefix}}/posts/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{prefix}}",
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "title",
+							"type": "text"
+						},
+						{
+							"key": "desc",
+							"value": "desc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/{{prefix}}/posts",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{prefix}}",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add comment with postid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "comment",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/{{prefix}}/comment/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{prefix}}",
+						"comment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "follow a user with userid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/{{prefix}}/follow/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{prefix}}",
+						"follow",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "unfollow a user with userid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/{{prefix}}/unfollow/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{prefix}}",
+						"unfollow",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user by token id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{prefix}}/user/{{token}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{prefix}}",
+						"user",
+						"{{token}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/{{prefix}}/posts/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{prefix}}",
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "like a post with postid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/{{prefix}}/like/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{prefix}}",
+						"like",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "unlike a post with postid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/{{prefix}}/unlike/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"{{prefix}}",
+						"unlike",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8383"
+		},
+		{
+			"key": "prefix",
+			"value": "api"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
