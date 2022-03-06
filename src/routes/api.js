@@ -23,13 +23,13 @@ route.post('/authenticate', async (req, res) => {                               
     const uuid = user.uuid
     const id = user.id
     const token = await jwt.sign({ uuid, id }, "thisismysecretkey")
-    res.send({"token" : token})
+    res.send({ "token": token })
 })
 
 route.post('/follow/:id', async (req, res) => {                                         //ok
     const userver = jwt.verify(req.body.token, "thisismysecretkey")
     const userid = userver.id
-    const entry = await Posts.findAll({
+    const entry = await Users.findAll({
         where: {
             id: req.params.id
         }
@@ -75,7 +75,7 @@ route.post('/follow/:id', async (req, res) => {                                 
 route.post('/unfollow/:id', async (req, res) => {                                           //ok
     const userver = jwt.verify(req.body.token, "thisismysecretkey")
     const userid = userver.id
-    const entry = await Posts.findAll({
+    const entry = await Users.findAll({
         where: {
             id: req.params.id
         }
