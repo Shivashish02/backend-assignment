@@ -2,9 +2,10 @@ const Sequelize = require('sequelize')
 
 const db = new Sequelize({
     dialect: 'postgres',
-    database: 'test',
-    username: 'postgres',
-    password: 'abcd',
+    database: 'det48391onruna',
+    username: 'xvggvomnwemrdg',
+    password: 'bcf6beaccf5a0cabe8ffcdc8ce2f1bf2e63151cb675e5a6f105be7747157623a',
+    host: 'ec2-3-225-41-234.compute-1.amazonaws.com'
 })
 
 const COL_ID_DEF = {

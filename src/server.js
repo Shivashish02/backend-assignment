@@ -8,12 +8,13 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.use('/api', apiRoute)
+const PORT = process.env.PORT || 8383
 
 
 db.sync()
   .then(() => {
-    app.listen(8383, () => {
-      console.log('server started on http://localhost:8383')
+    app.listen(PORT, () => {
+      console.log(`started on http://localhost:${PORT}`)
     })
   })
   .catch((err) => {
