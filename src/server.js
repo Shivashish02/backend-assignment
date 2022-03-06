@@ -11,7 +11,7 @@ app.use('/api', apiRoute)
 const PORT = process.env.PORT || 8383
 
 
-db.sync({ force: true })
+db.sync()
   .then(() => {
     app.listen(PORT, () => {
       console.log(`server started`)
