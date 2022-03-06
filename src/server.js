@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 8383
 db.sync()
   .then(() => {
     app.listen(PORT, () => {
-      console.log(`started on http://localhost:${PORT}`)
+      console.log(`server started`)
     })
   })
   .catch((err) => {
